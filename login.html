@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Feedback Login</title>
+</head>
+<body>
+    <img src="./faculty/Shri_Dharmasthala_Manjunatheshwara_College_of_Engineering_&_Technology,_Dharwad_Logo.png" height="150" width="500" alt="college logo">
+    <center>
+<div class="container">
+   
+  <form action="main_page.html" method="post">
+    <fieldset>
+      <legend>Student Login</legend>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <br>
+      <label for="usn">Password:</label>
+      <input type="password" id="usn" name="usn" required>
+      <br>
+      <br>
+      <input type="submit" value="Submit" href="main_page.html">
+    </fieldset>
+  </form>
+</div>
+</center>
+<button><a href="./welcome.html" class="btn">Back to welcome page</a></button>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const form = document.querySelector("form");
+      const emailInput = document.getElementById("email");
+      const usnInput = document.getElementById("usn");
+      const errorContainer = document.createElement("div");
+      errorContainer.className = "error hidden";
+      form.prepend(errorContainer);
+  
+      form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          const email = emailInput.value;
+          const usn = usnInput.value;
+          
+          if (!validateEmail(email)) {
+              alert("Please enter a valid email address.");
+              return;
+          }
+  
+          if (!validateUSN(usn)) {
+              showError("Please enter a valid password.");
+              return;
+          }
+          let status =  confirm("login successfull");
+
+          //showSuccess("Login successful!");
+          if(status){
+          window.open('file:///D:/final%20feeedback/main_page.html');
+          // Here you can add an actual submission logic, e.g., an AJAX request
+  
+      });
+  
+      function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(String(email).toLowerCase());
+      }
+  
+      function validateUSN(usn) {
+          // Add actual password validation logic if needed
+          return usn.length > 0;
+      }
+  
+      function showError(message) {
+          errorContainer.textContent = message;
+          errorContainer.classList.remove("hidden");
+      }
+  
+      function showSuccess(message) {
+          errorContainer.textContent = message;
+          errorContainer.classList.remove("hidden");
+          errorContainer.classList.add("success");
+      }
+  });
+  </script> 
+</body>
+</html>

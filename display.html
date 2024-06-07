@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+</head>
+
+<body>
+    <img src="./faculty/Shri_Dharmasthala_Manjunatheshwara_College_of_Engineering_&_Technology,_Dharwad_Logo.png "width="500">
+
+
+    <center>
+        <p>
+        <h3 style="background-color: rgb(225, 119, 119);">Please Select Professor to check thier performance</h3>
+
+        </p>
+        <form>
+            <fieldset style="width: 250px; height: 50px;">
+                <table>
+                    <tr>
+                        <td><label>Select Professor</label></td>
+                        <td>
+                            <select id="prof">
+                                <option value="0">-Select Professor-</option>
+                                <option value="1">Prof. Indira Umarji</option>
+                                <option value="2">Prof. Basavaraj Vaddatti</option>
+                                <option value="3">Prof. Prathapkumar M K</option>
+                            </select>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td><input type="button" name="btnsubmit"  value ="Submit" onclick="display()"></td>
+                        <td><input type="reset" value="clear" name="btnclear"></td>
+                    </tr>
+                </table>
+                <br>    
+            </fieldset>
+        </form>
+        <div id="details"></div>
+
+    </center>
+</body>
+<script type="text/javascript">
+    function display() {
+    let Professor = document.getElementById("prof").value;
+    var names = ["Prof. Indira Umarji", "Prof. Basavaraj Vaddatti", "Prof. Prathapkumar M K"];
+    var questions = ["Effectiveness", "Communication", "availability", "assignment", "organization", "approachable", "responding", "teaching", "interaction", "performance", "additionalcomment"];
+    var answers = [
+        ["Excellent", "Good", "Excellent", "Excellent", "Excellent", "Excellent", "Excellent", "Excellent", "Good", "Good", "very helpful"],
+        ["Good", "Excellent", "Excellent", "Excellent", "Excellent", "Excellent", "Excellent", "Excellent", "Good", "Good", "very helpful"],
+        ["Excellent", "Good", "Excellent", "Excellent", "Excellent", "Excellent", "Excellent", "Excellent", "Good", "Good", "very helpful"]
+    ];
+
+    if (Professor == "0") {
+        alert("Please select professor");
+    } else {
+        var index = parseInt(Professor) - 1; // Subtracting 1 because array index starts from 0
+        var table = "<table border='1'>";
+        table += "<tr><th>NAME:</th><td>" + names[index] + "</td></tr>";
+        table += "<tr><th>Questions</th><th>Answers</th></tr>";
+
+        for (var i = 0; i < questions.length; i++) {
+            table += "<tr><td>" + questions[i] + "</td><td>" + answers[index][i] + "</td></tr>";
+        }
+
+        table += "</table>";
+        document.getElementById("details").innerHTML = table;
+    }
+}
+
+</script>
+
+</html>

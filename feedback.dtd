@@ -1,0 +1,17 @@
+<!DOCTYPE feedbackinfo [
+    <!ELEMENT feedbackinfo (lecturer*)>
+    <!ELEMENT lecturer (name, effectiveness, communication, availability, assignment, organization, approachable, responding, teaching, interaction, performance, additionalcomment)>
+    <!ATTLIST lecturer id ID #REQUIRED>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT effectiveness (#PCDATA)>
+    <!ELEMENT communication (#PCDATA)>
+    <!ELEMENT availability (#PCDATA)>
+    <!ELEMENT assignment (#PCDATA)>
+    <!ELEMENT organization (#PCDATA)>
+    <!ELEMENT approachable (#PCDATA)>
+    <!ELEMENT responding (#PCDATA)>
+    <!ELEMENT teaching (#PCDATA)>
+    <!ELEMENT interaction (#PCDATA)>
+    <!ELEMENT performance (#PCDATA)>
+    <!ELEMENT additionalcomment (#PCDATA)>
+]>

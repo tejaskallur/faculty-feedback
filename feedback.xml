@@ -1,0 +1,45 @@
+
+<feedbackinfo>
+    <lecturer id="69696">
+        <name>Prof. Indira Umarji</name>
+        <effectiveness>Excellent</effectiveness>
+        <communication>Good</communication>
+        <availability>Excellent</availability>
+        <assignment>Good</assignment>
+        <organization>Good</organization>
+        <approachable>excellent</approachable>
+        <responding>Good</responding>
+        <teaching>Good</teaching>
+        <interaction>Good</interaction>
+        <performance>Good</performance> 
+        <additionalcomment>very helpful</additionalcomment> 
+    </lecturer>
+    <lecturer id="69697">
+        <name>Prof. Basavaraj Vaddatti</name>
+        <effectiveness>Good</effectiveness>
+        <communication>Good</communication>
+        <availability>Excellent</availability>
+        <assignment>Good</assignment>
+        <organization>Good</organization>
+        <approachable>excellent</approachable>
+        <responding>Good</responding>
+        <teaching>Good</teaching>
+        <interaction>Good</interaction>
+        <performance>Good</performance> 
+        <additionalcomment>very helpful</additionalcomment> 
+    </lecturer>
+    <lecturer id="69698">
+        <name>Prof. Prathapkumar M K</name>
+        <effectiveness>Excellent</effectiveness>
+        <communication>Good</communication>
+        <availability>Excellent</availability>
+        <assignment>Good</assignment>
+        <organization>Good</organization>
+        <approachable>excellent</approachable>
+        <responding>Good</responding>
+        <teaching>Good</teaching>
+        <interaction>Good</interaction>
+        <performance>Good</performance> 
+        <additionalcomment>very understanding</additionalcomment> 
+    </lecturer>
+</feedbackinfo>

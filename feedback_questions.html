@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teachers' Feedback</title>
+</head>
+<body>
+
+<h1 style="background-color: rgb(254, 119, 119);">Teachers Feedback Form</h1>
+
+<form id="feedbackForm" action="#" method="post">
+  
+  <fieldset>
+    <legend>Question 1: How would you rate the teaching effectiveness of the teacher?</legend>
+    <label><input type="radio" name="q1" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q1" value="good"> Good</label>
+    <label><input type="radio" name="q1" value="average"> Average</label>
+    <label><input type="radio" name="q1" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 2: How would you rate the teacher's communication skills?</legend>
+    <label><input type="radio" name="q2" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q2" value="good"> Good</label>
+    <label><input type="radio" name="q2" value="average"> Average</label>
+    <label><input type="radio" name="q2" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 3: How would you rate the teacher's availability for help and guidance?</legend>
+    <label><input type="radio" name="q3" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q3" value="good"> Good</label>
+    <label><input type="radio" name="q3" value="average"> Average</label>
+    <label><input type="radio" name="q3" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 4: Did the teacher provide timely and helpful feedback on assignments and assessments</legend>
+    <label><input type="radio" name="q4" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q4" value="good"> Good</label>
+    <label><input type="radio" name="q4" value="average"> Average</label>
+    <label><input type="radio" name="q4" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 5: How would you rate the organization and structure of the course materials provided by the teacher?
+    </legend>
+    <label><input type="radio" name="q5" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q5" value="good"> Good</label>
+    <label><input type="radio" name="q5" value="average"> Average</label>
+    <label><input type="radio" name="q5" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 6: How accessible and approachable was the teacher for questions, clarifications, and additional support outside of class?
+    </legend>
+    <label><input type="radio" name="q6" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q6" value="good"> Good</label>
+    <label><input type="radio" name="q6" value="average"> Average</label>
+    <label><input type="radio" name="q6" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 7: How effective was the teacher in responding to students' questions and concerns outside of class hours? 
+    </legend>
+    <label><input type="radio" name="q7" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q7" value="good"> Good</label>
+    <label><input type="radio" name="q7" value="average"> Average</label>
+    <label><input type="radio" name="q7" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 8: How well did the teacher incorporate different teaching methods and resources to accommodate various learning styles?
+    </legend>
+    <label><input type="radio" name="q8" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q8" value="good"> Good</label>
+    <label><input type="radio" name="q8" value="average"> Average</label>
+    <label><input type="radio" name="q8" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 9: Did the teacher encourage student participation and interaction during lectures and discussions?
+    </legend>
+    <label><input type="radio" name="q9" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q9" value="good"> Good</label>
+    <label><input type="radio" name="q9" value="average"> Average</label>
+    <label><input type="radio" name="q9" value="poor"> Poor</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Question 10: How satisfied are you with the teacher's overall performance, and do you have any specific suggestions for improvement?
+    </legend>
+    <label><input type="radio" name="q10" value="excellent"> Excellent</label>
+    <label><input type="radio" name="q10" value="good"> Good</label>
+    <label><input type="radio" name="q10" value="average"> Average</label>
+    <label><input type="radio" name="q10" value="poor"> Poor</label>
+  </fieldset>
+
+  <!-- Add more fieldsets for additional questions -->
+
+  <fieldset>
+    <legend><h3 style="background-color: rgb(254, 119, 119);">Additional Comments</h3></legend>
+    <textarea name="comments" rows="5" placeholder="Enter any additional comments here..."></textarea>
+  </fieldset>
+
+  <input type="button" value="Submit" onclick="validateForm()">
+</form>
+
+</body>
+<script>
+  function validateForm() {
+    let isValid = true;
+    let errorMessage = "Please answer the following questions:\n";
+  
+    for (let i = 1; i <= 10; i++) {
+      const question = document.querySelector(`input[name="q${i}"]:checked`);
+      if (!question) {
+        errorMessage += `Question ${i}\n`;
+        isValid = false;
+      }
+    }
+  
+    if (!isValid) {
+      alert(errorMessage);
+      return;
+    }else{
+      let status = confirm("Are you sure you want to submit the feedback?");
+      if(status){
+        alert("feedback submitted");
+        window.open('file:///D:/final%20feeedback/display.html')
+      }
+    }
+    
+  
+    // // Second level validation
+    // if (document.querySelector('input[name="q1"][value="poor"]').checked && document.getElementById('comments').value.trim() === '') {
+    //   alert("If you rated any question as 'Poor', please provide additional comments.");
+    //   return;
+    // }
+  
+    // // If all validations pass, display confirmation
+    // if (confirm("Are you sure you want to submit the feedback?")) {
+    //   document.getElementById("feedbackForm").submit();
+    // }
+  }
+  </script>
+</html>

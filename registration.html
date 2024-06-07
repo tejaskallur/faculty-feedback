@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Feedback Registration</title>
+</head>
+<body>
+    <img src="./faculty/Shri_Dharmasthala_Manjunatheshwara_College_of_Engineering_&_Technology,_Dharwad_Logo.png" height="150" width="500" alt="college logo">
+    <center>
+<div class="container">
+   
+  <form action="#" method="post">
+    <fieldset>
+      <legend>Student Registration</legend>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <br>
+      <label for="contact">Contact Number:</label>
+      <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required>
+      <br>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <br>
+      <label for="usn">College USN:</label>
+      <input type="text" id="usn" name="usn" required>
+      <br>
+      <br>
+      <label for="usn">Password:</label>
+      <input type="password" id="pwd" name="pwd" required>
+      <br>
+      <br>
+      <input type="submit" value="Submit" href="">
+    </fieldset>
+  </form>
+</div>
+</center>
+<button><a href="./welcome.html" class="btn">Back to welcome page</a></button>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const form = document.querySelector("form");
+      const nameInput = document.getElementById("name");
+      const contactInput = document.getElementById("contact");
+      const emailInput = document.getElementById("email");
+      const usnInput = document.getElementById("usn");
+      const pwdInput = document.getElementById("pwd");
+      const errorContainer = document.createElement("div");
+      errorContainer.className = "error hidden";
+      form.prepend(errorContainer);
+  
+      form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          const name = nameInput.value;
+          const contact = contactInput.value;
+          const email = emailInput.value;
+          const usn = usnInput.value;
+          const pwd = pwdInput.value;
+  
+          if (!validateName(name)) {
+              showError("Please enter a valid name.");
+              return;
+          }
+  
+          if (!validateContact(contact)) {
+              showError("Please enter a valid 10-digit contact number.");
+              return;
+          }
+  
+          if (!validateEmail(email)) {
+              showError("Please enter a valid email address.");
+              return;
+          }
+  
+          if (!validateUSN(usn)) {
+              showError("Please enter a valid College USN.");
+              return;
+          }
+  
+          if (!validatePassword(pwd)) {
+              showError("Please enter a valid password.");
+              return;
+          }
+          let status =  confirm("registration successfull");
+          //showSuccess("Registration successful!");
+          if(status){
+          window.open('file:///D:/final%20feeedback/login.html');
+          }
+          // Here you can add actual submission logic, e.g., an AJAX request
+  
+      });
+  
+      function validateName(name) {
+          return name.length > 0;
+      }
+  
+      function validateContact(contact) {
+          const re = /^[0-9]{10}$/;
+          return re.test(contact);
+      }
+  
+      function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(String(email).toLowerCase());
+      }
+  
+      function validateUSN(usn) {
+          // Add actual USN validation logic if needed
+          return usn.length > 0;
+      }
+  
+      function validatePassword(pwd) {
+          return pwd.length > 0;
+      }
+  
+      function showError(message) {
+          errorContainer.textContent = message;
+          errorContainer.classList.remove("hidden");
+          errorContainer.classList.remove("success");
+          errorContainer.classList.add("error");
+      }
+  
+      function showSuccess(message) {
+          errorContainer.textContent = message;
+          errorContainer.classList.remove("hidden");
+          errorContainer.classList.remove("error");
+          errorContainer.classList.add("success");
+      }
+  });
+  </script>
+</html>
